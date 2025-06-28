@@ -5,106 +5,160 @@ parent: Guias de Desenvolvimento
 nav_order: 1
 ---
 
-# Claude Code no WSL
+# Claude Code no WSL com Plugin IntelliJ
 
-Este guia aborda como configurar e usar o Claude Code no Windows Subsystem for Linux (WSL).
+**Tags:** #wsl #claude #ai #plugin #intellij
+## Passos Rápidos
 
-## Pré-requisitos
-
-- Windows 10/11 com WSL2 instalado
-- Distribuição Linux no WSL (Ubuntu recomendado)
-- Node.js instalado no WSL
-
-## Instalação
-
-### 1. Configurar o WSL
-
+### 1. Instalar Claude Code no WSL
 ```bash
-# Verificar versão do WSL
-wsl --version
-
-# Listar distribuições instaladas
-wsl -l -v
+# No terminal WSL
+npm install -g @anthropic-ai/claude-code
 ```
 
-### 2. Instalar Claude Code
-
+### 2. Autenticar
 ```bash
-# Instalar via npm
-npm install -g @anthropic/claude-code
-
-# Verificar instalação
-claude-code --version
+# No WSL
+claude
+# Seguir login no browser
 ```
 
-## Configuração
-
-### Autenticação
-
+### 3. Criar Script Wrapper
 ```bash
-# Configurar API key
-claude-code auth login
+# No WSL
+nano ~/claude-wrapper.sh
 ```
 
-### Configuração do ambiente
-
+Conteúdo do script:
 ```bash
-# Configurar editor padrão
-export EDITOR=nano
-
-# Configurar diretório de projetos
-cd ~/projetos
+#!/bin/bash
+source ~/.bashrc
+/home/valdemar/.nvm/versions/node/v22.14.0/bin/node /home/valdemar/.nvm/versions/node/v22.14.0/bin/claude "$@"
 ```
 
-## Uso Básico
-
-### Comandos essenciais
-
 ```bash
-# Iniciar sessão interativa
-claude-code
-
-# Executar comando específico
-claude-code "criar um arquivo README.md"
-
-# Usar com arquivo específico
-claude-code --file src/app.js "adicionar comentários JSDoc"
+chmod +x ~/claude-wrapper.sh
 ```
 
-## Dicas e Truques
+### 4. Configurar Plugin IntelliJ
+- Settings → Tools → Claude Code
+- Executable Path: `wsl ~/claude-wrapper.sh`
+- Clicar no ícone Claude Code na barra superior
 
-### Integração com VS Code
+## Detalhes Técnicos
 
-- Usar extensões do WSL
-- Configurar terminal integrado
-- Sincronização de configurações
+### Limitações do Claude Code
+- **Não suporta Windows nativamente**
+- Requer macOS ou Linux
+- Mensagem de erro: "Claude Code is not supported on Windows"
 
-### Performance
-
-- Usar arquivos no sistema de arquivos do WSL
-- Evitar cross-filesystem operations
-- Configurar Git no WSL
-
-## Solução de Problemas
-
-### Problemas comuns
-
-1. **Erro de permissão**: `chmod +x script.sh`
-2. **Node.js não encontrado**: Reinstalar Node.js via nvm
-3. **Conexão de rede**: Verificar configurações de proxy
-
-### Logs e debug
+### Problema com WSL e PATH
+O comando `claude` funciona em shell interativo do WSL, mas não via `wsl comando`:
 
 ```bash
-# Verificar logs
-claude-code --debug
+# ❌ Não funciona
+wsl claude --version
+# Erro: command not found
 
-# Limpar cache
-claude-code cache clear
+# ✅ Funciona
+wsl
+claude --version
 ```
 
-## Recursos Adicionais
+**Causa:** Shells não-interativos não carregam `.bashrc` automaticamente.
 
-- [Documentação oficial do Claude Code](https://docs.anthropic.com/claude-code)
-- [Guia do WSL](https://docs.microsoft.com/en-us/windows/wsl/)
-- [Configuração do Node.js no WSL](https://docs.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-wsl)
+### Problema com NVM
+O Claude Code foi instalado via npm/nvm, criando dependências:
+
+```bash
+# Localização do executável
+/home/valdemar/.nvm/versions/node/v22.14.0/bin/claude
+
+# ❌ Não funciona - Node não encontrado
+wsl /caminho/completo/claude
+
+# ✅ Funciona - Usando node explicitamente
+wsl bash -c "source ~/.bashrc && /caminho/node /caminho/claude"
+```
+
+### Diferença entre Shells Interativos e Não-Interativos
+
+**Shell Interativo (WSL direto):**
+- Carrega `.bashrc`
+- Inicializa nvm
+- PATH completo disponível
+
+**Shell Não-Interativo (via `wsl comando`):**
+- Não carrega `.bashrc`
+- NVM não inicializado
+- PATH limitado
+
+### Soluções Testadas
+
+#### 1. Comando Completo (Funciona)
+```bash
+wsl bash -c "source ~/.bashrc && /home/valdemar/.nvm/versions/node/v22.14.0/bin/node /home/valdemar/.nvm/versions/node/v22.14.0/bin/claude"
+```
+
+#### 2. Script Wrapper (Recomendado)
+Encapsula a complexidade em um script simples:
+```bash
+wsl ~/claude-wrapper.sh
+```
+
+#### 3. Alternativas Não Implementadas
+- Instalar Node.js via `apt` (mais simples, mas altera ambiente)
+- Mover configuração nvm para `.profile`
+
+### Autenticação Claude Code
+- **Não usa API key**
+- Autenticação via browser (OAuth)
+- Token armazenado localmente no WSL
+- Plugin usa mesma autenticação
+
+### Verificações Úteis
+
+```bash
+# Verificar localização do claude
+which claude
+
+# Testar autenticação
+claude /status
+
+# Verificar configuração nvm
+cat ~/.bashrc | grep nvm
+
+# Testar script wrapper
+wsl ~/claude-wrapper.sh --version
+```
+
+### Comandos Úteis Claude Code
+```bash
+/help          # Lista comandos
+/init          # Cria CLAUDE.md no projeto
+/status        # Status da autenticação
+```
+
+## Troubleshooting
+
+### Plugin não encontra executável
+- Verificar caminho: `wsl ~/claude-wrapper.sh`
+- Testar manualmente no PowerShell
+
+### Erro de autenticação
+```bash
+# Reautenticar no WSL
+wsl
+claude
+```
+
+### Script wrapper não executa
+```bash
+# Verificar permissões
+ls -la ~/claude-wrapper.sh
+chmod +x ~/claude-wrapper.sh
+```
+
+### Node not found
+- Verificar se nvm está no `.bashrc`
+- Ajustar caminho no script wrapper para sua versão do Node
