@@ -1,0 +1,16 @@
+{
+    "name": "Dev Guides",
+    "short_name": "DevGuides",
+    "description": "Guias de desenvolvimento e documentação técnica",
+    "icons": [
+        {
+            "src": "/dev-guides/assets/favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml"
+        }
+    ],
+    "theme_color": "#2B2D42",
+    "background_color": "#EDF2F4",
+    "display": "standalone",
+    "start_url": "/dev-guides/"
+}
