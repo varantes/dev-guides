@@ -10,7 +10,6 @@ vendor/
 
 # Screenshots e arquivos temporários
 screenshots/
-docs/desenvolvimento/
 *.tmp
 *.temp
 

@@ -49,6 +49,8 @@ exclude:
   - .jekyll-cache
   - .jekyll-metadata
   - .idea
+  - docs/desenvolvimento/
+  - screenshots/
 
 # Include files
 include:
