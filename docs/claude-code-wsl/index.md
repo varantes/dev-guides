@@ -7,7 +7,11 @@ nav_order: 1
 
 # Claude Code no WSL com Plugin IntelliJ
 
-**Tags:** #wsl #claude #ai #plugin #intellij
+![WSL](https://img.shields.io/badge/WSL-0078D7?style=flat&logo=windows&logoColor=white)
+![Claude](https://img.shields.io/badge/Claude-FF6B35?style=flat&logo=anthropic&logoColor=white)
+![AI](https://img.shields.io/badge/AI-4285F4?style=flat&logo=google&logoColor=white)
+![IntelliJ](https://img.shields.io/badge/IntelliJ-000000?style=flat&logo=intellijidea&logoColor=white)
+
 ## Passos Rápidos
 
 ### 1. Instalar Claude Code no WSL
