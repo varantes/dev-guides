@@ -36,4 +36,4 @@ Use o menu lateral para navegar entre os guias ou clique diretamente nos links a
 
 ## Sugestões de Guias
 
-Tem alguma sugestão de guia que gostaria de ver aqui? [Abra uma issue](https://github.com/seu-usuario/dev-guides/issues) no repositório do projeto!
+Tem alguma sugestão de guia que gostaria de ver aqui? [Abra uma issue](https://github.com/varantes/dev-guides/issues) no repositório do projeto!

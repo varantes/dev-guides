@@ -1,7 +1,7 @@
 title: Dev Guides
 description: Guias de desenvolvimento e ferramentas para desenvolvedores
 baseurl: "/dev-guides"
-url: "https://seu-usuario.github.io"
+url: "https://varantes.github.io"
 
 # Build settings
 markdown: kramdown
@@ -31,11 +31,11 @@ navigation:
 
 # Site settings
 lang: pt-BR
-author: Seu Nome
-email: seu.email@exemplo.com
+author: Valdemar Arantes Neto
+email: varantes@exemplo.com
 
 # GitHub Pages settings
-github_username: seu-usuario
+github_username: varantes
 repository: dev-guides
 
 # Exclude files

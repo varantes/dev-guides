@@ -20,7 +20,7 @@ Este repositório contém guias práticos e documentação técnica sobre ferram
 ## 🌐 Site GitHub Pages
 
 Este projeto está configurado para usar GitHub Pages com Jekyll. Acesse o site em:
-`https://seu-usuario.github.io/dev-guides`
+`https://varantes.github.io/dev-guides`
 
 ### Estrutura do Site
 
@@ -74,8 +74,8 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 ## 📧 Contato
 
-- GitHub: [@seu-usuario](https://github.com/seu-usuario)
-- Email: seu.email@exemplo.com
+- GitHub: [@varantes](https://github.com/varantes)
+- Email: varantes@exemplo.com
 
 ---
 

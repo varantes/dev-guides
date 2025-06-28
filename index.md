@@ -13,7 +13,7 @@ Uma coleção de guias de desenvolvimento e documentação técnica para desenvo
 {: .fs-6 .fw-300 }
 
 [Explorar Guias](#guias-disponíveis){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[Ver no GitHub](https://github.com/seu-usuario/dev-guides){: .btn .fs-5 .mb-4 .mb-md-0 }
+[Ver no GitHub](https://github.com/varantes/dev-guides){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
 
@@ -40,7 +40,7 @@ Este repositório centraliza conhecimento útil sobre ferramentas e tecnologias 
 
 ## Contribuições
 
-Contribuições são bem-vindas! Veja nosso [guia de contribuição](https://github.com/seu-usuario/dev-guides#como-contribuir) para começar.
+Contribuições são bem-vindas! Veja nosso [guia de contribuição](https://github.com/varantes/dev-guides#como-contribuir) para começar.
 
 ---
 
