@@ -33,7 +33,6 @@ navigation:
 # Site settings
 lang: pt-BR
 author: Valdemar Arantes Neto
-email: varantes@exemplo.com
 
 # GitHub Pages settings
 github_username: varantes
@@ -71,7 +70,6 @@ twitter:
 social:
   name: Valdemar Arantes Neto
   links:
-    - https://twitter.com/varantes
     - https://github.com/varantes
 
 # Tags configuration
