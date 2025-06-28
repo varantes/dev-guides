@@ -193,14 +193,14 @@ chmod +x ~/claude-wrapper.sh
 
 ## Referências e Links Úteis
 
-- **Claude Code Oficial**: https://docs.anthropic.com/en/docs/claude-code
-- **Claude Code NPM**: https://www.npmjs.com/package/@anthropic-ai/claude-code
-- **Anthropic Claude**: https://www.anthropic.com/claude
-- **WSL Documentation**: https://learn.microsoft.com/en-us/windows/wsl/
-- **WSL Troubleshooting**: https://learn.microsoft.com/en-us/windows/wsl/troubleshooting
-- **IntelliJ IDEA**: https://www.jetbrains.com/idea/
-- **Node.js & NVM**: https://github.com/nvm-sh/nvm
-- **Bash Manual - Interactive vs Non-Interactive**: https://www.gnu.org/software/bash/manual/html_node/Interactive-Shells.html
+- [**Claude Code Oficial**](https://docs.anthropic.com/en/docs/claude-code) - Documentação completa da ferramenta
+- [**Claude Code NPM**](https://www.npmjs.com/package/@anthropic-ai/claude-code) - Pacote oficial no registro NPM
+- [**Anthropic Claude**](https://www.anthropic.com/claude) - Site oficial do Claude AI
+- [**WSL Documentation**](https://learn.microsoft.com/en-us/windows/wsl/) - Guia oficial do Windows Subsystem for Linux
+- [**WSL Troubleshooting**](https://learn.microsoft.com/en-us/windows/wsl/troubleshooting) - Solução de problemas do WSL
+- [**IntelliJ IDEA**](https://www.jetbrains.com/idea/) - IDE oficial da JetBrains
+- [**Node.js & NVM**](https://github.com/nvm-sh/nvm) - Node Version Manager no GitHub
+- [**Bash Manual - Interactive Shells**](https://www.gnu.org/software/bash/manual/html_node/Interactive-Shells.html) - Diferenças entre shells interativos e não-interativos
 
 ## Palavras-chave para Busca
 
