@@ -1,0 +1,74 @@
+title: Dev Guides
+description: Guias de desenvolvimento e ferramentas para desenvolvedores
+baseurl: "/dev-guides"
+url: "https://seu-usuario.github.io"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Jekyll configuration
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  guides:
+    output: true
+    permalink: /:collection/:name/
+
+# Navigation
+navigation:
+  - title: Home
+    url: /
+  - title: Guias
+    url: /guides/
+  - title: Claude Code WSL
+    url: /docs/claude-code-wsl/
+
+# Site settings
+lang: pt-BR
+author: Seu Nome
+email: seu.email@exemplo.com
+
+# GitHub Pages settings
+github_username: seu-usuario
+repository: dev-guides
+
+# Exclude files
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
+  - .jekyll-metadata
+  - .idea
+
+# Include files
+include:
+  - _pages
+
+# Sass configuration
+sass:
+  style: compressed
+
+# Pagination
+paginate: 10
+paginate_path: "/page:num/"
+
+# SEO settings
+twitter:
+  username: seu_twitter
+  card: summary
+
+social:
+  name: Seu Nome
+  links:
+    - https://twitter.com/seu_twitter
+    - https://github.com/seu-usuario
