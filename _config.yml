@@ -13,6 +13,7 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-tagging
 
 # Collections
 collections:
@@ -68,7 +69,26 @@ twitter:
   card: summary
 
 social:
-  name: Seu Nome
+  name: Valdemar Arantes Neto
   links:
-    - https://twitter.com/seu_twitter
-    - https://github.com/seu-usuario
+    - https://twitter.com/varantes
+    - https://github.com/varantes
+
+# Tags configuration
+tag_page_layout: tag_page
+tag_page_dir: tag
+tag_permalink_style: pretty
+
+# SEO and LLM optimization
+defaults:
+  - scope:
+      path: "docs"
+      type: "pages"
+    values:
+      layout: "default"
+      sitemap: true
+      
+# Structured data
+schema:
+  type: TechnicalArticle
+  publisher: "Dev Guides"
